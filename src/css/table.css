@@ -1,0 +1,32 @@
+.table_content {
+  color: #565656;
+  margin-top: 10px;
+  margin-left: 2%;
+  margin-bottom: 70px;
+  width: 48%;
+  float: left;
+  font-weight: normal;
+  font-size: 19px;
+}
+.picture {
+  margin-left: 10%;
+  float: left;
+}
+#historyData #delete,
+#historyData #result {
+  color: #152497;
+}
+#historyData #delete:hover,
+#historyData #result:hover {
+  cursor: pointer;
+}
+#historyData #delete:active,
+#historyData #result:active {
+  color: #ab101d;
+}
+#historyData td {
+  width: 80px;
+}
+#historyData #result {
+  width: 85px;
+}

@@ -1,0 +1,326 @@
+definitions:
+  models.FirstWeight:
+    properties:
+      area:
+        type: number
+      character:
+        type: number
+      commerce:
+        type: number
+      credit:
+        type: number
+      culture:
+        type: number
+      id:
+        type: integer
+      investment:
+        type: number
+      level:
+        type: number
+      name:
+        type: string
+      office_people:
+        type: number
+      people_density:
+        type: number
+      people_num:
+        type: number
+      place:
+        type: number
+      policy:
+        type: number
+      reform:
+        type: number
+      rent:
+        type: number
+      resources:
+        type: number
+      risk:
+        type: number
+      shop_density:
+        type: number
+      society:
+        type: number
+      terminal:
+        type: number
+    type: object
+  models.SecondWeight:
+    properties:
+      ability:
+        type: number
+      cost:
+        type: number
+      digitization:
+        type: number
+      id:
+        type: integer
+      idea:
+        type: number
+      name:
+        type: string
+      place:
+        type: number
+      resource:
+        type: number
+    type: object
+info:
+  contact: {}
+paths:
+  /cal:
+    get:
+      consumes:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 获取计算结果
+      tags:
+      - 公共方法
+  /deleteUser:
+    delete:
+      consumes:
+      - application/json
+      parameters:
+      - description: 客户名称
+        in: query
+        name: name
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 删除记录
+      tags:
+      - 公共方法
+  /firstWeight-list:
+    get:
+      consumes:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 获取权重1
+      tags:
+      - 公共方法
+  /firstWeight-modify:
+    put:
+      parameters:
+      - description: FirstWeight
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.FirstWeight'
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 权重1修改
+      tags:
+      - 公共方法
+  /getUser:
+    get:
+      consumes:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 获取全部用户
+      tags:
+      - 公共方法
+  /getUserMark:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 客户名称
+        in: query
+        name: name
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 获取用户分数
+      tags:
+      - 公共方法
+  /input:
+    post:
+      parameters:
+      - description: 客户名称
+        in: formData
+        name: name
+        required: true
+        type: string
+      - description: 商圈类型
+        in: formData
+        name: types
+        required: true
+        type: string
+      - description: 商圈等级
+        in: formData
+        name: level
+        required: true
+        type: string
+      - description: 商铺地段
+        in: formData
+        name: place
+        required: true
+        type: string
+      - description: 人口密度
+        in: formData
+        name: people_density
+        required: true
+        type: string
+      - description: 产业聚集度
+        in: formData
+        name: shop_density
+        required: true
+        type: string
+      - description: 政策倾斜
+        in: formData
+        name: policy
+        required: true
+        type: string
+      - description: 自然资源
+        in: formData
+        name: resources
+        required: true
+        type: string
+      - description: 店租
+        in: formData
+        name: rent
+        required: true
+        type: string
+      - description: 客流量
+        in: formData
+        name: people_num
+        required: true
+        type: string
+      - description: 营业人员
+        in: formData
+        name: office_people
+        required: true
+        type: string
+      - description: 经营面积
+        in: formData
+        name: area
+        required: true
+        type: string
+      - description: 经营业态
+        in: formData
+        name: state
+        required: true
+        type: string
+      - description: 文化程度
+        in: formData
+        name: culture
+        required: true
+        type: string
+      - description: 改造意愿
+        in: formData
+        name: reform
+        required: true
+        type: string
+      - description: 经营风险承担意愿
+        in: formData
+        name: risk
+        required: true
+        type: string
+      - description: 性格
+        in: formData
+        name: character
+        required: true
+        type: string
+      - description: 计划投资力度
+        in: formData
+        name: investment
+        required: true
+        type: string
+      - description: 信用情况
+        in: formData
+        name: credit
+        required: true
+        type: string
+      - description: 现代终端系统熟练情况
+        in: formData
+        name: terminal
+        required: true
+        type: string
+      - description: 电子商务软件熟悉情况
+        in: formData
+        name: commerce
+        required: true
+        type: string
+      - description: 社会资源
+        in: formData
+        name: society
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 用户输入信息
+      tags:
+      - 公共方法
+  /mark:
+    get:
+      consumes:
+      - application/json
+      parameters:
+      - description: 客户名称
+        in: query
+        name: name
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 历史记录获取用户分数
+      tags:
+      - 公共方法
+  /secondWeight-list:
+    get:
+      consumes:
+      - application/json
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 获取权重2
+      tags:
+      - 公共方法
+  /secondWeight-modify:
+    put:
+      parameters:
+      - description: SecondWeight
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/models.SecondWeight'
+      responses:
+        "200":
+          description: '{"code":"200","data":""}'
+          schema:
+            type: string
+      summary: 权重2修改
+      tags:
+      - 公共方法
+swagger: "2.0"

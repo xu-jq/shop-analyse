@@ -1,0 +1,102 @@
+.table1_content,
+.table2_content {
+  width: 90%;
+  margin: 20px auto;
+}
+#item {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: none;
+}
+#updataTable1,
+#updataTable2 {
+  display: none;
+}
+#updataTable1 .re_div,
+#updataTable2 .re_div {
+  position: fixed;
+  top: 100px;
+  border: 8px solid #EEEEEE;
+  width: 30%;
+  background-color: white;
+  left: 35%;
+  z-index: 2;
+}
+#updataTable1 .aa,
+#updataTable2 .aa {
+  width: 33%;
+  height: calc(70vh);
+  overflow: auto;
+  padding: 0 10px;
+}
+#updataTable1 h2,
+#updataTable2 h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1c4e98;
+  font-weight: 500;
+}
+#updataTable1 .leftC,
+#updataTable2 .leftC,
+#updataTable1 .rigthC,
+#updataTable2 .rigthC {
+  width: 50%;
+  float: left;
+  border: 1px solid black;
+}
+#updataTable1 .td_left,
+#updataTable2 .td_left {
+  width: 100px;
+  height: 50px;
+  text-align: right;
+  color: #A6A6A6;
+}
+#updataTable1 .td_right,
+#updataTable2 .td_right {
+  padding-left: 50px;
+  color: #A6A6A6;
+}
+#updataTable1 #digitization,
+#updataTable2 #digitization,
+#updataTable1 #ability,
+#updataTable2 #ability,
+#updataTable1 #cost,
+#updataTable2 #cost,
+#updataTable1 #resource,
+#updataTable2 #resource,
+#updataTable1 #shopplace,
+#updataTable2 #shopplace,
+#updataTable1 #idea,
+#updataTable2 #idea,
+#updataTable1 .all,
+#updataTable2 .all {
+  background-color: white;
+  width: 251px;
+  height: 32px;
+  border: 1px solid #A6A6A6;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+#updataTable1 #comfirm1,
+#updataTable2 #comfirm1,
+#updataTable1 #comfirm2,
+#updataTable2 #comfirm2 {
+  float: right;
+  width: 30%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #1c4e98;
+  border: 1px solid #1c4e98;
+  color: white;
+  margin-bottom: 20px;
+}
+.title {
+  margin: 50px 0;
+  margin-left: 5%;
+  color: #282828;
+}

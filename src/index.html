@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>农网特色终端分类评价模型</title>
+  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/form.css" />
+  <link rel="stylesheet" href="./css/table.css" />
+  <link rel="stylesheet" href="./css/weight.css" />
+  <script type="text/javascript" src='http://cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js'></script>
+</head>
+<body>
+  <div class="tab">
+    
+ <!-- nav -->
+    <div class="tab_list">
+        <div class="titleName">
+          <p>农网特色终端分类评价模型</p>
+        </div>
+        <ul>
+            <li class="active" id="dataInput">数据输入</li>
+            <li id="showData">数据分析</li>
+            <li id="updataQuan">修改权重</li>
+            <li id="historal">历史记录</li>
+        </ul>
+    </div>
+<!-- nav—content -->
+    <div class="tab_con">
+      <!-- 模块1—— 数据输入 -->
+        <div class="item forms" id="shuju" style="display: block;">
+          <form role="form">
+            <div class="left">
+                <div class="form-group">
+                  <label for="customer_name">客户名称</label>
+                  <input type="text" placeholder=" 请输入" id="customer_name">
+                </div>
+                <div class="form-group">
+                  <label for="state">经营业态</label>
+                  <select id="state">
+                    <option>食杂店</option>
+                    <option>便利店</option>
+                    <option>超市</option>
+                    <option>烟酒店</option>
+                    <option>娱乐服务</option>
+                    <option>商场</option>
+                    <option>其它</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                <label for="types">商圈类型</label>
+                <select id="types">
+
+                  <option>高端商业</option>
+                  <option>低端商业</option>
+                  <option>高端住宅</option>
+                  <option>低端住宅</option>
+                  <option>高端旅游</option>
+                  <option>低端旅游</option>
+                  <option>大型工业</option>
+                  <option>小型工业</option>
+                  <option>高端办公区</option>
+                  <option>低端办公区</option>
+                  <option>墟镇</option>
+                  <option>乡村</option>
+                  <option>大型交通枢纽</option>
+                  <option>小型枢纽</option>
+                </select>
+                </div>
+                <div class="form-group">
+                  <label for="level">商圈等级</label>
+                  <select id="level">
+                     
+                    <option>低</option>
+                    <option>中</option>
+                    <option>高</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="place">商铺地段</label>
+                  <select id="place">
+                     
+                    <option>差</option>
+                    <option>中</option>
+                    <option>高</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="people_density">人口密度</label>
+                  <select id="people_density">
+                     
+                    <option>少</option>
+                    <option>一般</option>
+                    <option>多</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="shop_density">产业聚集度</label>
+                  <select id="shop_density">
+                     
+                    <option>无</option>
+                    <option>有</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="policy">政策倾斜</label>
+                  <select id="policy">
+                     
+                    <option>无</option>
+                    <option>有</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="resources">自然资源</label>
+                  <select id="resources">
+                     
+                    <option>少</option>
+                    <option>一般</option>
+                    <option>多</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="rent">店租</label>
+                  <select id="rent">
+                     
+                    <option>低</option>
+                    <option>中</option>
+                    <option>高</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="people_num">客流量</label>
+                  <select id="people_num">
+                     
+                    <option>少</option>
+                    <option>一般</option>
+                    <option>多</option>
+                  </select>
+                </div>
+            </div>
+
+            <div class="right">
+              <div class="form-group">
+                <label for="office_people">营业人员</label>
+                <select id="office_people">
+                   
+                  <option>1人</option>
+                  <option>2人</option>
+                  <option>3人或以上</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="area">经营面积</label>
+                <select id="area">
+                   
+                  <option>小</option>
+                  <option>中</option>
+                  <option>大</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="culture">文化程度</label>
+                <select id="culture">
+                   
+                  <option>小学及以下</option>
+                  <option>中学</option>
+                  <option>大专及以上</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="reform">改造意愿</label></label>
+                <select id="reform">
+                   
+                  <option>无意愿</option>
+                  <option>一般</option>
+                  <option>意愿较强</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="risk">经营风险承担意愿</label>
+                <select id="risk">
+                   
+                  <option>保守型</option>
+                  <option>稳健型</option>
+                  <option>进取型</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="character">性格</label>
+                <select id="character">
+                   
+                  <option>内向</option>
+                  <option>外向</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="investment">计划投资力度</label>
+                <select id="investment">
+                   
+                  <option>小</option>
+                  <option>中</option>
+                  <option>大</option>
+                </select>
+              </div>   
+              <div class="form-group">
+                <label for="credit">信用情况</label>
+                <select id="credit">
+                   
+                  <option>较差</option>
+                  <option>一般</option>
+                  <option>良好</option>
+                </select>
+              </div>   
+              <div class="form-group">
+                <label for="terminal">现代终端系统熟练度</label>
+                <select id="terminal">
+                   
+                  <option>未使用</option>
+                  <option>不熟练</option>
+                  <option>较熟练</option>
+                  <option>熟练</option>
+                </select>
+              </div>   
+              <div class="form-group">
+                <label for="commerce">电子商务软件熟悉度</label>
+                <select id="commerce">
+                   
+                  <option>未使用</option>
+                  <option>不熟练</option>
+                  <option>较熟练</option>
+                  <option>熟练</option>
+                </select>
+              </div>   
+              <div class="form-group">
+                <label for="society">社会资源</label>
+                <select id="society">
+                   
+                  <option>少</option>
+                  <option>一般</option>
+                  <option>多</option>
+                </select>
+              </div>   
+              <div id="submit">
+                <!-- <button type="submit" class="btn btn-primary">提交</button> -->
+                <!-- <input type="button" value="提交"> -->
+                <button type="button" class="btn btn-default btn-lg btn-block">提交数据</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      <!-- 模块2 —— 数据分析-->
+        <div class="item" id="keshihua">
+          <!-- 1、表格——客户数据表格 -->
+          <div class="table2" style="width:96%;margin:2% auto;">
+            <table class="table table-bordered">
+              <!-- <caption>客户数据</caption> -->
+              <tbody  id="top1">
+                <!-- 
+                  <tr class="centerIt">
+                  <th rowspan="2" class="centerIt"  style="vertical-align: middle;">客户名称</th>
+                  <td>商圈类型</td>
+                  <td>商圈等级</td>
+                  <td>商铺地段</td>
+                  <td>人口密度</td>
+                  <td>产业聚集度</td>
+                  <td>政策倾斜</td>
+                  <td>自然资源</td>
+                  <td>店租</td>
+                  <td>客流量</td>
+                  <td>营业人员</td>
+                  <td>经营面积</td>
+                </tr>
+                <tr class="success centerIt"> -->
+                  <!-- 
+                  <td>低端商业</td>
+                  <td>90</td>
+                  <td>90</td>
+                  <td>90</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>30</td>
+                  <td>60</td>
+                  <td>90</td>
+                  <td>30</td>
+                  <td>60</td> 
+                </tr>-->
+
+                <!-- 
+                <tr class="centerIt">
+                  <th rowspan="2" class="centerIt cc"  style="vertical-align: middle;"></th>
+                  <td>经营业态</td>
+                  <td>文化程度</td>
+                  <td>改造意愿</td>
+                  <td>经营风险承担意愿</td>
+                  <td>性格</td>
+                  <td>计划投资力度</td>
+                  <td>信用情况</td>
+                  <td>现代终端系统熟练度</td>
+                  <td>电子商务软件熟悉度</td>
+                  <td>社会资源</td>
+                  <td></td>
+                </tr>
+                <tr class="warning centerIt"> -->
+                  <!-- 
+                  <td>90</td>
+                  <td>90</td>
+                  <td>90</td>
+                  <td>100</td>
+                  <td>60</td>
+                  <td>90</td>
+                  <td>90</td>
+                  <td>60</td>
+                  <td>60</td>
+                  <td></td>
+                  <td></td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <!-- 2、 -->
+          <div class="two">
+            <!-- 表格 -->
+            <div class="table_content">
+              <table  id="content" class="table table-striped table-bordered table-hover">
+                <!-- <thead>
+                  <tr class="active">
+                    <th  colspan="2" class="centerIt">终端类型</th>
+                    <th class="centerIt">六个维度匹配度</th>
+                    <th class="centerIt">商圈匹配度</th>
+                    <th class="centerIt">矢量长度</th>
+                  </tr>
+                </thead>
+                <tbody class="centerIt"> -->
+                  <!-- <tr class="active">
+                    <td rowspan="2"class="centerIt">便民终端</td>
+                    <td>一站式服务终端</td>
+                    <td>74.7</td>
+                    <th>50</th>
+                    <th>89</th></tr>
+                  <tr class="success">
+                    <td>小型便民</td>
+                    <td>74.7</td>
+                    <th>50</th>
+                    <th>89</th></tr>
+                  <tr class="warning">
+                    <th rowspan="2"class="centerIt">红色终端</th>
+                    <td>党群服务</td>
+                    <td>74.7</td>
+                    <th>50</th>
+                    <th>89</th></tr>
+                  <tr class="danger">
+                    <td>红色文化</td>
+                    <td>74.7</td>
+                    <th>50</th>
+                    <th>89</th></tr>
+                    <tr class="active">
+                      <td rowspan="5"class="centerIt">文化终端</td>
+                      <td>茶艺</td>
+                      <td>74.7</td>
+                      <th>50</th>
+                      <th>89</th></tr>
+                    <tr class="success">
+                      <td>网红</td>
+                      <td>74.7</td>
+                      <th>50</th>
+                      <th>89</th></tr>
+                    <tr class="warning">
+                      <td>品牌</td>
+                      <td>74.7</td>
+                      <th>50</th>
+                      <th>89</th></tr>
+                    <tr class="danger">
+                      <td>民俗土特产</td>
+                      <td>74.7</td>
+                      <th>50</th>
+                      <th>89</th></tr>
+                    <tr class="active">
+                      <td>婚庆</td>
+                      <td>74.7</td>
+                      <th>50</th>
+                      <th>89</th></tr>
+                    <tr class="success">
+                      <th style="text-align: center; vertical-align: middle !important;">游客终端</th>
+                      <td>游客驿站</td>
+                      <td>74.7</td>
+                      <th>50</th>
+                      <th>89</th></tr> -->
+                <!-- </tbody> -->
+
+              </table>
+            </div>
+            <!-- 雷达图 -->
+            <div class="picture" style="width:500px;height:500px">
+            </div>
+          </div>
+          
+          </div>
+
+      <!-- 模块3 —— 修改权重-->
+        <div class="item" id="quanzhong">
+          <!-- 蒙版 -->
+          <div id="item" onclick="closeUpdata()"></div>
+          <!-- 修改权重2——弹出框 -->
+          <div id="updataTable2">
+            <div class="re_div">
+              <h2 id="name">标题</h2>
+              <label id="idcode" style="display: none;">id</label>
+              <table>
+                  <tr>
+                      <td class="td_left"><label for="digitization">数字化能力</label></td>
+                      <td class="td_right"><input type="number"  oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="digitization" id="digitization" placeholder="请输入权重值"></td>
+                  </tr>
+          
+                  <tr>
+                      <td class="td_left"><label for="ability">经营能力</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="ability" id="ability" placeholder="请输入权重"></td>
+                  </tr>
+          
+                  <tr>
+                      <td class="td_left"><label for="idea">经营理念</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="idea" id="idea" placeholder="请输入权重"></td>
+                  </tr>
+          
+                  <tr>
+                      <td class="td_left"><label for="cost">经营成本</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="cost" id="cost" placeholder="请输入权重"></td>
+                  </tr>
+          
+                  <tr>
+                      <td class="td_left"><label for="resource">资源禀赋</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="resource" id="resource" placeholder="请输入权重"></td>
+                  </tr>
+          
+                  <tr>
+                      <td class="td_left"><label for="shopplace">地段热度</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="shopplace" id="shopplace" placeholder="请输入权重"></td>
+                  </tr>
+                      <td colspan="2" align="right"><input id="comfirm2" type="submit" value="确认修改"></td>
+                  </tr>
+              </table>
+          </div>
+          </div>
+          <!-- 修改权重1——弹出框 -->
+          <div id="updataTable1">
+            <div class="re_div aa">
+              <h2 id="name1">标题</h2>
+              <label id="idcode1" style="display: none;">id</label>
+              <table>
+                  <tr>
+                      <td class="td_left"><label for="level1">商圈等级</label></td>
+                      <td class="td_right"><input type="number"  oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="level1" id="level1" class="all"></td>
+                  </tr>
+          
+                  <tr>
+                      <td class="td_left"><label for="place1">商铺地段</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="place1" id="place1" class="all"></td>
+                  </tr>
+          
+                  <tr>
+                      <td class="td_left"><label for="people_density1">人口密度</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="people_density1" id="people_density1" class="all"></td>
+                  </tr>
+          
+                  <tr>
+                      <td class="td_left"><label for="shop_density1">产品聚集度</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="shop_density1" id="shop_density1" class="all"></td>
+                  </tr>
+          
+                  <tr>
+                      <td class="td_left"><label for="policy1">政策倾斜</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="policy1" id="policy1" class="all"></td>
+                  </tr>
+          
+                  <tr>
+                      <td class="td_left"><label for="resources1">自然资源</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="resources1" id="resources1" class="all"></td>
+                  </tr>
+
+                  <tr>
+                      <td class="td_left"><label for="rent1">店租</label></td>
+                      <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="rent1" id="rent1" class="all"></td>
+                  </tr>
+
+                  <tr>
+                     <td class="td_left"><label for="people_num1">客流量</label></td>
+                     <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="people_num1" id="people_num1" class="all"></td>
+                  </tr>
+
+                  <tr>
+                    <td class="td_left"><label for="office_people1">营业人员</label></td>
+                    <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="office_people1" id="office_people1" class="all"></td>
+                  </tr>
+
+                  <tr>
+                    <td class="td_left"><label for="area1">经营面积</label></td>
+                    <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="area1" id="area1" class="all"></td>
+                  </tr>
+
+                  <tr>
+                    <td class="td_left"><label for="culture1">文化程度</label></td>
+                    <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="culture1" id="culture1" class="all"></td>
+                  </tr>
+
+                  <tr>
+                    <td class="td_left"><label for="reform1">改造意愿</label></td>
+                    <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="reform1" id="reform1" class="all"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td class="td_left"><label for="risk1">经营风险承担意愿</label></td>
+                    <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="risk1" id="risk1" class="all"></td>
+                  </tr>
+
+                  <tr>
+                    <td class="td_left"><label for="character1">性格</label></td>
+                    <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="character1" id="character1" class="all"></td>
+                </tr>
+
+                <tr>
+                  <td class="td_left"><label for="investment1">计划投资力度</label></td>
+                  <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="investment1" id="investment1" class="all"></td>
+                </tr>
+
+                <tr>
+                  <td class="td_left"><label for="credit1">信用情况</label></td>
+                  <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="credit1" id="credit1" class="all"></td>
+                </tr>
+
+                <tr>
+                  <td class="td_left"><label for="terminal1">现代终端系统熟练度</label></td>
+                  <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="terminal1" id="terminal1" class="all"></td>
+                </tr>
+
+                <tr>
+                  <td class="td_left"><label for="commerce1">电子商务软件熟悉度</label></td>
+                  <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="commerce1" id="commerce1" class="all"></td>
+                </tr>
+
+                <tr>
+                  <td class="td_left"><label for="society1">社会资源</label></td>
+                  <td class="td_right"><input type="number"   oninput="if(value>1)value=1;if(value<0)value=0" step="0.05" name="society1" id="society1" class="all"></td>
+                </tr>
+
+                <td colspan="2" align="right"><input id="comfirm1" type="submit" value="确认修改"></td>
+                  </tr>
+              </table>
+          </div>
+          </div>
+          <!-- 表格——权重1 -->
+          <h1 class="title">1、六个维度计算权重</h1>
+          <div class="table1_content">
+            <table class="table table-bordered table-hover">
+              <!-- <caption>上下文表格布局</caption> -->
+              <thead>
+                <tr>
+                  <th class="centerIt"> </th>
+                  <th class="centerIt">商圈等级</th>
+                  <th class="centerIt">商圈地段</th>
+                  <th class="centerIt">人口密度</th>
+                  <th class="centerIt">产业聚集度</th>
+                  <th class="centerIt">政策倾斜</th>
+                  <th class="centerIt">自然资源</th>
+                  <th class="centerIt">店租</th>
+                  <th class="centerIt">客流量</th>
+                  <th class="centerIt">营业人员</th>
+                  <th class="centerIt">经营面积</th>
+                  <th class="centerIt">文化程度</th>
+                  <th class="centerIt">改造意愿</th>
+                  <th class="centerIt">经营风险承担意愿</th>
+                  <th class="centerIt">性格</th>
+                  <th class="centerIt">计划投资力度</th>
+                  <th class="centerIt">信用情况</th>
+                  <th class="centerIt">现代终端系统熟练度</th>
+                  <th class="centerIt">电子商务软件熟悉度</th>
+                  <th class="centerIt">社会资源</th>
+                  <th class="centerIt">修改权重</th>
+                </tr>
+              </thead>
+              <tbody id="weight1Cont">
+                <!-- <tr class="active centerIt">
+                  <td>数字化能力</td>
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td>
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                  <td>0.1</td> 
+                </tr>
+                <tr class="success centerIt">
+                  <td>经营能力</td>
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td>
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                  <td>0.2</td> 
+                </tr>
+                <tr class="warning centerIt">
+                  <td>经营理念</td>
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td>
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                  <td>0.3</td> 
+                </tr>
+                <tr class="danger centerIt">
+                  <td>经营成本</td>
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td>
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                  <td>0.4</td> 
+                </tr>
+                <tr class="active centerIt">
+                  <td>资源禀赋</td>
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td>
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                  <td>0.5</td> 
+                </tr>
+                <tr class="success centerIt">
+                  <td>地段热度</td>
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td>
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                  <td>0.6</td> 
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <h1 class="title">2、与不同终端类型匹配度权重</h1>
+          <!-- 表格——权重2 -->
+          <div class="table2_content">
+            <table class="table  table-striped table-bordered table-hover" style="text-align: center; vertical-align: middle;">
+              <thead>
+                <tr class="active">
+                  <th></th>
+                  <th class="centerIt">终端类型</th>
+                  <th class="centerIt">数字化能力</th>
+                  <th class="centerIt">经营能力</th>
+                  <th class="centerIt">经营理念</th>
+                  <th class="centerIt">经营成本</th>
+                  <th class="centerIt">资源禀赋</th>
+                  <th class="centerIt">地段热度</th>
+                  <th class="centerIt">修改权重</th>
+                </tr>
+              </thead>
+              <tbody id="content1">
+                <!-- <tr>
+                  <th rowspan="2"class="centerIt">便民终端</th>
+                  <td>一站式服务终端</td>
+                  <td>0.1</td>
+                  <td>0.2</td>
+                  <td>0.3</td>
+                  <td>0.4</td>
+                  <th>0.5</th>
+                  <th>0.6</th>
+                  <th><button type="button" class="btn btn-default" onclick="update1(0)">点击修改</button></th></tr>
+                <tr>
+                  <td>小型便民</td>
+                  <td>0.1</td>
+                  <td>0.2</td>
+                  <td>0.3</td>
+                  <td>0.4</td>
+                  <th>0.5</th>
+                  <th>0.6</th>
+                  <th><button type="button" class="btn btn-default" onclick="update1(1)">点击修改</button></th></tr>
+                <tr>
+                  <th rowspan="2"class="centerIt">红色终端</th>
+                  <td>党群服务</td>
+                  <td>0.1</td>
+                  <td>0.2</td>
+                  <td>0.3</td>
+                  <td>0.4</td>
+                  <th>0.5</th>
+                  <th>0.6</th></tr>
+                <t>
+                  <td>红色文化</td>
+                  <td>0.1</td>
+                  <td>0.2</td>
+                  <td>0.3</td>
+                  <td>0.4</td>
+                  <th>0.5</th>
+                  <th>0.6</th></tr>
+                  <t>
+                    <th rowspan="5"class="centerIt">文化终端</th>
+                    <td>茶艺</td>
+                    <td>0.1</td>
+                    <td>0.2</td>
+                    <td>0.3</td>
+                    <td>0.4</td>
+                    <th>0.5</th>
+                    <th>0.6</th></tr>
+                  <tr>
+                    <td>网红</td>
+                    <td>0.1</td>
+                    <td>0.2</td>
+                    <td>0.3</td>
+                    <td>0.4</td>
+                    <th>0.5</th>
+                    <th>0.6</th></tr>
+                  <tr>
+                    <td>品牌</td>
+                    <td>0.1</td>
+                    <td>0.2</td>
+                    <td>0.3</td>
+                    <td>0.4</td>
+                    <th>0.5</th>
+                    <th>0.6</th></tr>
+                  <t>
+                    <td>民俗土特产</td>
+                    <td>0.1</td>
+                    <td>0.2</td>
+                    <td>0.3</td>
+                    <td>0.4</td>
+                    <th>0.5</th>
+                    <th>0.6</th></tr>
+                  <t>
+                    <td>婚庆</td>
+                    <td>0.1</td>
+                    <td>0.2</td>
+                    <td>0.3</td>
+                    <td>0.4</td>
+                    <th>0.5</th>
+                    <th>0.6</th></tr>
+                  <tr>
+                    <th style="text-align: center; vertical-align: middle !important;">游客终端</th>
+                    <td>游客驿站</td>
+                    <td>0.1</td>
+                    <td>0.2</td>
+                    <td>0.3</td>
+                    <td>0.4</td>
+                    <th>0.5</th>
+                    <th>0.6</th></tr> -->
+              </tbody>
+
+            </table>
+          </div> 
+        </div>
+      <!-- 模块4 —— 历史记录-->
+         <div class="item" id="lishi" style="width: 90%;margin: 30px auto;">
+          <table class="table table-bordered table-hover">
+            <!-- <caption>边框表格布局</caption> -->
+            <!-- <thead>
+              <tr>
+                <th>人口密度</th>
+                <th>产业聚集度</th>
+                <th>政策倾斜</th>
+              </tr>
+            </thead> -->
+            <tbody id="historyData">
+              <!-- <tr class="centerIt">
+                <td rowspan="2"  style="vertical-align: middle;">客户1</td>
+                <td>商圈类型</td>
+                <td>商圈等级</td>
+                <td>商铺地段</td>
+                <td>人口密度</td>
+                <td>产业聚集度</td>
+                <td>政策倾斜</td>
+                <td>自然资源</td>
+                <td>店租</td>
+                <td>客流量</td>
+                <td>营业人员</td>
+                <td>经营面积</td>
+                <td rowspan="2"  style="vertical-align: middle;"><button  type="button" class="btn btn-default">删除</button></td>
+              </tr>
+              <tr class="active centerIt">
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+              </tr>
+              <tr class="centerIt">
+                <td rowspan="2"  style="vertical-align: middle;">客户名称</td>
+                <td>经营业态</td>
+                <td>文化程度</td>
+                <td>改造意愿</td>
+                <td>经营风险承担意愿</td>
+                <td>性格</td>
+                <td>计划投资力度</td>
+                <td>信用情况</td>
+                <td>现代终端系统熟练情况</td>
+                <td>电子商务软件熟悉情况</td>
+                <td>社会资源</td>
+                <td></td>
+                <td rowspan="2"  style="vertical-align: middle;"><button  type="button" class="btn btn-default">查看分析结果</button></td>
+              </tr>
+              <tr class="active centerIt">
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+                <td>30</td>
+              </tr> -->
+            </tbody>
+          </table>
+         </div>
+    </div>
+</div>
+<script src="./js/index.js"></script>
+<script src="./js/inputData.js"></script>
+<script src="./js/getData.js"></script>
+<script src="./js/weight1.js"></script>
+<script src="./js/weight2.js"></script>
+<script src="./js/historyData.js"></script>
+</body>
+</html>
